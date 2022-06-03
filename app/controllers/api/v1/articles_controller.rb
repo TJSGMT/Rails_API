@@ -41,7 +41,7 @@ class Api::V1::ArticlesController < ApplicationController
     end
   end
 
-  def searched
+  def search
     @parameter = params[:title]
     @article = Article.where("lower(title) LIKE :title", title: "%#{@parameter}%")
     if @article != []
